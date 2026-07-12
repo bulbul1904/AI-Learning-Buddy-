@@ -5,8 +5,8 @@ import google.generativeai as genai
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 model = genai.GenerativeModel("gemini-2.5-flash")
 
-st.set_page_config(page_title="AI Learning Buddy", page_icon="🎓")
-st.title("🎓🎓 AI Learning Buddy")
+st.set_page_config(page_title="AI Learning Buddy Bulbul", page_icon="🎓")
+st.title("🎓🎓 AI Learning Buddy Bulbul")
 
 topic = st.text_input("Enter a Topic")
 option = st.selectbox(
@@ -36,4 +36,4 @@ if st.button("Generate"):
             response = model.generate_content(prompt)
             st.write(response.text)
         except Exception as e:
-            st.error("Oops! Something went wrong while generating a response. Please try again in a bit. ⚡")
+            st.error("Oops! Quota limit of gemini free version exceeds. Please try again in a bit. ⚡")
